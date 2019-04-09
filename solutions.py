@@ -1,4 +1,3 @@
-#Q1:
 def fact(n):
     f=1
     if n>0:
@@ -12,6 +11,7 @@ def list_sum(l):
     for i in range(len(l)):
         sum += l[i]
     return sum
+ #testcase not passed when sum is not initialized to zero
 
 def end_by_zero(n):
     if n%10 == 0:

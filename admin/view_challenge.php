@@ -1,4 +1,5 @@
 <?php include '../BackendFunctions/db_conn.php';
+session_start();
 include 'header.php';
 
 $sql = "select * from challenges where challenge_id = ".$_GET['challenge_id'].";";

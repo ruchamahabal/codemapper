@@ -30,7 +30,7 @@
           for($i = 0; $i < sizeof($_POST['sampleTestcases']); $i++ )
           {
               $testcase = $_POST['sampleTestcases'][$i];
-              $sql = 'insert into sample_test_cases(st_id, input, output, qid) values('.($i+1).','.$testcase[0].','.$testcase[1].','.$qid.');';
+              $sql = "insert into sample_test_cases(st_id, input, output, qid) values(".($i+1).",'".$testcase[0]."','".$testcase[1]."',".$qid.");";
               if (mysqli_query($conn, $sql)) {
                 array_push($success_array, 1);
               } else {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3308
--- Generation Time: Apr 04, 2019 at 09:01 AM
+-- Generation Time: Apr 09, 2019 at 01:54 AM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.2.1
 
@@ -40,10 +40,11 @@ CREATE TABLE `challenges` (
 --
 
 INSERT INTO `challenges` (`challenge_id`, `title`, `time_in_seconds`, `compilation_calls`) VALUES
-(1, 'TXP Challenge', 7200, 20),
-(2, 'Techxposure2.0', 7200, 20),
-(3, 'Codemapper contest 1', 432000, 20),
-(4, 'End Sem Challenge', 7200, 20);
+(5, 'Codemapper level 1', 7200, 20),
+(7, 'Codemapper level 2', 7200, 10),
+(8, 'Codemapper level 3', 7200, 15),
+(9, 'Techxposure 2.0', 7200, 16),
+(10, 'Python Mania', 7200, 17);
 
 -- --------------------------------------------------------
 
@@ -62,13 +63,23 @@ CREATE TABLE `challenge_questions_mapping` (
 --
 
 INSERT INTO `challenge_questions_mapping` (`challenge_id`, `qid`, `qno`) VALUES
-(1, 25, 1),
-(1, 27, 2),
-(2, 1, 1),
-(2, 2, 2),
-(2, 29, 3),
-(2, 30, 4),
-(4, 32, 1);
+(5, 34, 1),
+(5, 35, 2),
+(5, 36, 3),
+(7, 37, 1),
+(7, 38, 2),
+(7, 39, 3),
+(8, 34, 1),
+(8, 35, 2),
+(8, 36, 3),
+(8, 37, 4),
+(8, 38, 5),
+(8, 39, 6),
+(9, 36, 1),
+(9, 37, 2),
+(10, 34, 1),
+(10, 35, 2),
+(10, 38, 3);
 
 -- --------------------------------------------------------
 
@@ -88,30 +99,12 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`qid`, `question`, `initial_code`, `function_name`) VALUES
-(1, 'Write a python function prime_list(l) that takes a python list as a parameter and returns a list of all the prime numbers in the parameter list. The result list should not contain duplicate elements.', 'def prime_list(l):\r\n  #code below', 'prime_list()'),
-(2, 'Write a function matched(s) that takes as input a string s and checks if the brackets \"(\" and \")\" in s are matched: that is, every \"(\" has a matching \")\" after it and every \")\" has a matching \"(\" before it.  Your function should ignore all other symbols that appear in s.  Your function should return True if s has matched brackets and False if it does not.', 'def matched(s):\r\n  #code here', 'matched()'),
-(3, 'A list of integers is said to be a valley if it consists of a sequence of strictly decreasing values followed by a sequence of strictly increasing values. The decreasing and increasing sequences must be of length at least 2. The last value of the decreasing sequence is the first value of the increasing sequence.\r\nWrite a Python function valley(l) that takes a list of integers and returns True if l is a valley and False otherwise.', 'def valley(l):\r\n  #code here', 'valley()'),
-(4, 'write a python function fact(n) to calculate factorial of a number', 'def fact(n): #code_below', 'fact(n)'),
-(7, 'write a python function fact(n) to calculate factorial of a number', 'def fact: #code_below', 'fact'),
-(8, 'write a python function fact(n) to calculate factorial of a number', 'def fact: #code_below', 'fact'),
-(9, 'write a python function fact(n) to calculate factorial of a number', 'def fact: #code_below', 'fact'),
-(10, 'write a python function fact(n) to calculate factorial of a number', 'def fact: #code_below', 'fact'),
-(13, 'write a function fact(n) to find factorial of a number', 'def fact: #code_below', 'fact'),
-(14, 'write a function fact(n) to find factorial of a number', 'def fact: #code_below', 'fact'),
-(15, 'write a function fact(n) to find factorial of a number', 'def fact: #code_below', 'fact'),
-(16, 'write a function fact(n) to find factorial of a number', 'def fact: #code_below', 'fact'),
-(17, 'write a function fact(n) to find factorial of a number', 'def fact: #code_below', 'fact'),
-(22, 'write a function fact(n) to print factorial of a number', 'def fact: #code_below', 'fact'),
-(23, 'write a function fact(n) to print factorial of a number', '0', 'fact'),
-(24, 'write a fact prog', 'def fact: #code_below', 'fact'),
-(25, 'write a fact prog', 'def fact: #code_below', 'fact'),
-(26, 'write a fact prog', 'def fact: #code_below', 'fact'),
-(27, 'write a fact prog', 'def fact: #code_below', 'fact'),
-(28, 'write a fact prog', '0', 'fact'),
-(29, 'write a program fact(n)', '0', 'fact'),
-(30, 'write a fact func', 'def fact: #code_below', 'fact'),
-(31, '', 'def : #code_below', ''),
-(32, 'Write a function matched(s) that takes as input a string s and checks if the brackets \"(\" and \")\" in s are matched: that is, every \"(\" has a matching \")\" after it and every \")\" has a matching \"(\" before it.  Your function should ignore all other symbols that appear in s.  Your function should return True if s has matched brackets and False if it does not.', 'def matched(s): #code_below', 'matched');
+(34, 'write a function fact(n) that takes as parameter a number and returns factorial of that number', 'def fact(n): #code_below', 'fact'),
+(35, 'write a python function list_sum(l) that takes as input a list and returns sum of the elements of that list', 'def list_sum(l): #code_below', 'list_sum'),
+(36, 'write a python function end_by_zero(n) that takes as parameter a number and checks whether the number ends by zero', 'def end_by_zero(n): #code_below', 'end_by_zero'),
+(37, 'write a python function prime_list(l) that takes a list as paramter and returns another list that contains only prime numbers from the input list. Also, elements should not be repeated in the result list', 'def prime_list(l): #code_below', 'prime_list'),
+(38, 'Write a function matched(s) that takes as input a string s and checks if the brackets \"(\" and \")\" in s are matched: that is, every \"(\" has a matching \")\" after it and every \")\" has a matching \"(\" before it.  Your function should ignore all other symbols that appear in s.  Your function should return True if s has matched brackets and False if it does not.', 'def matched(s): #code_below', 'matched'),
+(39, ' A list of integers is said to be a valley if it consists of a sequence of strictly decreasing values followed by a sequence of strictly increasing values. The decreasing and increasing sequences must be of length at least 2. The last value of the decreasing sequence is the first value of the increasing sequence.\n\nWrite a Python function valley(l) that takes a list of integers and returns True if l is a valley and False otherwise.', 'def valley(l): #code_below', 'valley');
 
 -- --------------------------------------------------------
 
@@ -132,38 +125,21 @@ CREATE TABLE `sample_test_cases` (
 --
 
 INSERT INTO `sample_test_cases` (`st_id`, `input`, `output`, `qid`, `id`) VALUES
-(1, '[2,3,6,7]', '[2, 3, 7]', 1, 4),
-(2, '[4,6,8,10]', '[]', 1, 5),
-(3, '[44,71,356,1032]', '[71]', 1, 6),
-(1, '\"zb%78\"', 'True', 2, 10),
-(2, '\"(7)(a\"', 'False', 2, 11),
-(3, '\"a)*(?\"', 'False', 2, 12),
-(1, '[3,2,1,2,3]', 'True', 3, 13),
-(2, '[3,2,1]', 'False', 3, 14),
-(3, '[3,3,2,1,2]', 'False', 3, 15),
-(1, '4', '24', 9, 16),
-(1, '4', '24', 9, 17),
-(1, '4', '24', 10, 18),
-(2, '2', '2', 10, 19),
-(1, '2', '2', 13, 22),
-(2, '5', '120', 13, 23),
-(1, '2', '2', 14, 24),
-(2, '3', '6', 14, 25),
-(1, '2', '2', 15, 26),
-(2, '3', '6', 15, 27),
-(1, '4', '24', 22, 29),
-(2, '3', '6', 22, 30),
-(1, '4', '24', 0, 33),
-(2, '3', '6', 0, 34),
-(3, '5', '120', 0, 35),
-(1, '3', '6', 0, 36),
-(1, '4', '24', 0, 37),
-(1, '5', '120', 0, 38),
-(1, '5', '120', 0, 40),
-(1, '5', '120', 29, 42),
-(1, '5', '120', 30, 45),
-(1, '\"zb%78\"', 'True', 32, 46),
-(2, '\"(7)(a\"', 'False', 32, 47);
+(1, '[3,2,1,2,3]', 'True', 39, 69),
+(2, '[3,2,1]', 'False', 39, 70),
+(3, '[3,3,2,1,2]', 'False', 39, 71),
+(1, '[2,3,5]', '10', 35, 74),
+(2, '[2,0,0]', '2', 35, 75),
+(1, '10', 'True', 36, 85),
+(2, '101', 'False', 36, 86),
+(1, '\"zb%78\"', 'True', 38, 87),
+(2, '\"(7)(a\"', 'False', 38, 88),
+(3, '\"a)*(?\"', 'False', 38, 89),
+(1, '2', '2', 34, 94),
+(2, '6', '720', 34, 95),
+(1, '[2,3,6,7,3,7]', '[2, 3, 7]', 37, 96),
+(2, '[4,6,8,10]', '[]', 37, 97),
+(3, '[44,71,356,1032]', '[71]', 37, 98);
 
 -- --------------------------------------------------------
 
@@ -187,73 +163,36 @@ CREATE TABLE `testcase` (
 --
 
 INSERT INTO `testcase` (`tc_no`, `input`, `input_function_call`, `expected_output`, `qid`, `tc_id`, `difficulty_level`, `type`) VALUES
-(1, '[2,3,6,7]', 'print(prime_list([2,3,6,7]))', '[2, 3, 7]', 1, 6, 5, 'sample'),
-(2, '[4,6,8,10]', 'print(prime_list([4,6,8,10]))', '[]', 1, 7, 10, 'sample'),
-(3, '', 'print(prime_list([44,71,356,1032]))', '[71]', 1, 8, 5, 'sample'),
-(4, '', 'print(prime_list([2,3,3,6,7,2]))', '[2, 3, 7]', 1, 9, 10, 'hidden'),
-(5, '', 'print(prime_list([5,6,9,8,5,6,9,8]))', '[5]', 1, 10, 10, 'hidden'),
-(1, '', 'print(matched(\"zb%78\"))', 'True', 2, 16, 10, 'sample'),
-(2, '', 'print(matched(\"(7)(a\"))', 'False', 2, 17, 10, 'sample'),
-(3, '', 'print(matched(\"a)*(?\"))', 'False', 2, 18, 20, 'sample'),
-(4, '', 'print(matched(\"((jkl)78(A)&l(8(dd(FJI:),):)?)\"))', 'True', 2, 19, 20, 'hidden'),
-(5, '', 'print(matched(\"a3qw3;4w3(aasdgsd)((agadsgdsgag)agaga)\"))', 'True', 2, 20, 20, 'hidden'),
-(1, '', 'print(valley([2]))', 'False', 3, 21, 40, 'hidden'),
-(2, '', 'print(valley([3,3,2,1,2]))', 'False', 3, 22, 40, 'sample'),
-(3, '', 'print(valley([3,2,1]))', 'False', 3, 23, 30, 'sample'),
-(4, '', 'print(valley([3,2,1,2,3]))', 'True', 3, 24, 10, 'sample'),
-(5, '', 'print(valley([5,4,3,2,1,2]))', 'True', 3, 25, 20, 'hidden'),
-(5, '', 'print(prime_list([]))', '[]', 1, 29, 10, 'hidden'),
-(5, '', 'print(matched(\"(ag(Gaga(agag)Gaga)GG)a)33)cc(\"))', 'False', 2, 30, 20, 'hidden'),
-(5, '', 'print (valley([17,1,2,3,4,5]))', 'True', 3, 31, 10, 'hidden'),
-(2, '', 'print(fact(5))', '', 11, 32, 0, 'hidden'),
-(3, '', 'print(fact(5))', '', 11, 33, 0, 'hidden'),
-(2, '', 'print(fact(2))', '', 12, 34, 0, 'hidden'),
-(3, '', 'print(fact(2))', '', 12, 35, 0, 'hidden'),
-(1, '', 'print(fact(2))', '2', 13, 36, 5, 'sample'),
-(2, '', 'print(fact(5))', '120', 13, 37, 5, 'sample'),
-(2, '', 'print(fact(6))', '720', 13, 38, 0, 'hidden'),
-(3, '', 'print(fact(7))', '5040', 13, 39, 0, 'hidden'),
-(1, '', 'print(fact(2))', '2', 14, 40, 5, 'sample'),
-(2, '', 'print(fact(3))', '6', 14, 41, 5, 'sample'),
-(2, '', 'print(fact(6))', '720', 14, 42, 0, 'hidden'),
-(3, '', 'print(fact(7))', '5040', 14, 43, 0, 'hidden'),
-(1, '', 'print(fact(2))', '2', 15, 44, 5, 'sample'),
-(2, '', 'print(fact(3))', '6', 15, 45, 5, 'sample'),
-(3, '', 'print(fact(5))', '120', 15, 46, 5, 'hidden'),
-(4, '', 'print(fact(6))', '720', 15, 47, 5, 'hidden'),
-(1, '', 'print(fact())', '', 17, 48, 0, 'sample'),
-(1, '', 'print(fact(f))', 'gvb', 18, 49, 7, 'sample'),
-(1, '', 'print(fact(6))', '720', 19, 50, 7, 'sample'),
-(2, '', 'print(fact(7))', '5040', 19, 51, 5, 'hidden'),
-(1, '', 'print(())', '', 20, 52, 0, 'sample'),
-(1, '4', 'print(fact(4))', '24', 22, 53, 5, 'sample'),
-(2, '3', 'print(fact(3))', '6', 22, 54, 5, 'sample'),
-(3, '7', 'print(fact(7))', '5040', 22, 55, 5, 'hidden'),
-(4, '10', 'print(fact(10))', '1000', 22, 56, 5, 'hidden'),
-(1, '4', 'print(fact(4))', '24', 0, 61, 5, 'sample'),
-(2, '3', 'print(fact(3))', '6', 0, 62, 5, 'sample'),
-(3, '5', 'print(fact(5))', '120', 0, 63, 5, 'sample'),
-(4, '7', 'print(fact(7))', '5040', 0, 64, 5, 'hidden'),
-(5, '10', 'print(fact(10))', '1000', 0, 65, 3, 'hidden'),
-(1, '3', 'print(fact(3))', '6', 0, 66, 5, 'sample'),
-(2, '5', 'print(fact(5))', '120', 0, 67, 5, 'hidden'),
-(1, '4', 'print(fact(4))', '24', 0, 68, 5, 'sample'),
-(2, '5', 'print(fact(5))', '120', 0, 69, 5, 'hidden'),
-(1, '5', 'print((5))', '120', 0, 70, 5, 'sample'),
-(2, '4', 'print((4))', '24', 0, 71, 5, 'hidden'),
-(1, '5', 'print(fact(5))', '120', 0, 74, 3, 'sample'),
-(2, '2', 'print(fact(2))', '2', 0, 75, 10, 'hidden'),
-(1, '5', 'print(fact(5))', '120', 29, 78, 10, 'sample'),
-(2, '2', 'print(fact(2))', '2', 29, 79, 5, 'hidden'),
-(1, '5', 'print(fact(5))', '120', 30, 84, 5, 'sample'),
-(2, '10', 'print(fact(10))', '1000', 30, 85, 5, 'hidden'),
-(1, '[2,5,6]', 'print(prime_list([2,5,6]))', '[2,5]', 31, 86, 5, 'sample'),
-(2, '[8,9,6]', 'print(prime_list([8,9,6]))', '[]', 31, 87, 10, 'sample'),
-(3, '[]', 'print(prime_list([]))', '[]', 31, 88, 5, 'hidden'),
-(1, '\"zb%78\"', 'print(matched(\"zb%78\"))', 'True', 32, 89, 5, 'sample'),
-(2, '\"(7)(a\"', 'print(matched(\"(7)(a\"))', 'False', 32, 90, 5, 'sample'),
-(3, '\"((jkl)78(A)&l(8(dd(FJI:),):)?)\"', 'print(matched(\"((jkl)78(A)&l(8(dd(FJI:),):)?)\"))', 'True', 32, 91, 5, 'hidden'),
-(4, '\"a3qw3;4w3(aasdgsd)((agadsgdsgag)agaga)\"', 'print(matched(\"a3qw3;4w3(aasdgsd)((agadsgdsgag)agaga)\"))', 'True', 32, 92, 5, 'hidden');
+(1, '[3,2,1,2,3]', 'print(valley([3,2,1,2,3]))', 'True', 39, 145, 5, 'sample'),
+(2, '[3,2,1]', 'print(valley([3,2,1]))', 'False', 39, 146, 5, 'sample'),
+(3, '[3,3,2,1,2]', 'print(valley([3,3,2,1,2]))', 'False', 39, 147, 5, 'sample'),
+(4, '[2]', 'print(valley([2]))', 'False', 39, 148, 10, 'hidden'),
+(5, '[5,4,3,2,1,2]', 'print(valley([5,4,3,2,1,2]))', 'True', 39, 149, 10, 'hidden'),
+(6, '[17,1,2,3,4,5]', 'print(valley([17,1,2,3,4,5]))', 'True', 39, 150, 10, 'hidden'),
+(1, '[2,3,5]', 'print(list_sum([2,3,5]))', '10', 35, 155, 5, 'sample'),
+(2, '[2,0,0]', 'print(list_sum([2,0,0]))', '2', 35, 156, 5, 'sample'),
+(3, '[2,-2]', 'print(list_sum([2,-2]))', '0', 35, 157, 10, 'hidden'),
+(4, '[]', 'print(list_sum([]))', '0', 35, 158, 10, 'hidden'),
+(1, '10', 'print(end_by_zero(10))', 'True', 36, 177, 5, 'sample'),
+(2, '101', 'print(end_by_zero(101))', 'False', 36, 178, 5, 'sample'),
+(3, '1', 'print(end_by_zero(1))', 'False', 36, 179, 10, 'hidden'),
+(4, '0', 'print(end_by_zero(0))', 'True', 36, 180, 10, 'hidden'),
+(1, '\"zb%78\"', 'print(matched(\"zb%78\"))', 'True', 38, 181, 5, 'sample'),
+(2, '\"(7)(a\"', 'print(matched(\"(7)(a\"))', 'False', 38, 182, 5, 'sample'),
+(3, '\"a)*(?\"', 'print(matched(\"a)*(?\"))', 'False', 38, 183, 5, 'sample'),
+(4, '\"((jkl)78(A)&l(8(dd(FJI:),):)?)\"', 'print(matched(\"((jkl)78(A)&l(8(dd(FJI:),):)?)\"))', 'True', 38, 184, 10, 'hidden'),
+(5, '\"a3qw3;4w3(aasdgsd)((agadsgdsgag)agaga)\"', 'print(matched(\"a3qw3;4w3(aasdgsd)((agadsgdsgag)agaga)\"))', 'True', 38, 185, 10, 'hidden'),
+(6, '\"(ag(Gaga(agag)Gaga)GG)a)33)cc(\"', 'print(matched(\"(ag(Gaga(agag)Gaga)GG)a)33)cc(\"))', 'False', 38, 186, 10, 'hidden'),
+(1, '2', 'print(fact(2))', '2', 34, 195, 5, 'sample'),
+(2, '6', 'print(fact(6))', '720', 34, 196, 5, 'sample'),
+(3, '10', 'print(fact(10))', '1000', 34, 197, 10, 'hidden'),
+(4, '0', 'print(fact(0))', '1', 34, 198, 10, 'hidden'),
+(1, '[2,3,6,7,3,7]', 'print(prime_list([2,3,6,7,3,7]))', '[2, 3, 7]', 37, 199, 5, 'sample'),
+(2, '[4,6,8,10]', 'print(prime_list([4,6,8,10]))', '[]', 37, 200, 5, 'sample'),
+(3, '[44,71,356,1032]', 'print(prime_list([44,71,356,1032]))', '[71]', 37, 201, 5, 'sample'),
+(4, '[2,3,3,6,7,2]', 'print(prime_list([2,3,3,6,7,2]))', '[2,3,7]', 37, 202, 10, 'hidden'),
+(5, '[5,6,9,8,5,6,9,8]', 'print(prime_list([5,6,9,8,5,6,9,8]))', '[5]', 37, 203, 10, 'hidden'),
+(6, '[]', 'print(prime_list([]))', '[]', 37, 204, 10, 'hidden');
 
 -- --------------------------------------------------------
 
@@ -309,16 +248,8 @@ CREATE TABLE `user_scores` (
 --
 
 INSERT INTO `user_scores` (`user_id`, `score`, `total_score`, `time_remaining`, `total_time`, `compilation_calls_remaining`, `total_compilation_calls`, `hidden_passed`, `total_hidden_testcases`, `challenge_id`) VALUES
-(12, 210, 0, 6124, 0, 14, 0, 0, 0, NULL),
-(8, 0, 0, 0, 0, 20, 0, 0, 0, NULL),
-(8, 0, 0, 0, 0, 19, 0, 0, 0, NULL),
-(8, 300, 0, 28, 0, 16, 0, 9, 0, NULL),
-(8, 0, 0, 105, 0, -1, 0, 0, 0, NULL),
-(8, 0, 0, 112, 0, 0, 0, 0, 0, NULL),
-(8, 0, 0, 113, 0, 0, 0, 0, 0, NULL),
-(8, 20, 4, 7186, 0, 19, 0, 2, 0, 4),
-(8, 20, 20, 120, 120, 19, 0, 2, 2, 4),
-(8, 20, 20, 7190, 7200, 19, 20, 2, 2, 4);
+(8, 70, 90, 7145, 7200, 17, 20, 4, 6, 5),
+(8, 125, 135, 7078, 7200, 5, 10, 8, 9, 7);
 
 --
 -- Indexes for dumped tables
@@ -378,22 +309,22 @@ ALTER TABLE `user_scores`
 -- AUTO_INCREMENT for table `challenges`
 --
 ALTER TABLE `challenges`
-  MODIFY `challenge_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `challenge_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `qid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `qid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `sample_test_cases`
 --
 ALTER TABLE `sample_test_cases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 --
 -- AUTO_INCREMENT for table `testcase`
 --
 ALTER TABLE `testcase`
-  MODIFY `tc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `tc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=205;
 --
 -- AUTO_INCREMENT for table `users`
 --

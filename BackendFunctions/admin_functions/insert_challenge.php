@@ -22,7 +22,11 @@
                $sql1 = "insert into challenge_questions_mapping values(".(int)$challenge_id.",".(int)$selected.",".(int)$count.");";
                $success=mysqli_query($conn,$sql1);
                if(!$success){
+                    header("Location: ../../admin/manage_challenge.php?insert_err=true");
                     echo mysqli_error($conn);
+               }
+               else{
+                    header("Location: ../../admin/manage_challenges.php?insert_success=true");
                }
                $count = $count + 1;
             }

@@ -1,4 +1,5 @@
 <?php include '../BackendFunctions/db_conn.php';
+session_start();
 include 'header.php';?>
 
 <div class="content">
@@ -156,7 +157,7 @@ include 'header.php';?>
         dataType: 'json',
         success: function(data){
             $('#challenge_title').val(data.title);
-            $('#challenge_time').val(data.time_in_seconds);
+            $('#challenge_time').val(parseInt(data.time_in_seconds)/60);
             $('#compilation_calls').val(data.compilation_calls);
             var question_ids = data.question_ids;
             for(var i=0; i<question_ids.length; i++){

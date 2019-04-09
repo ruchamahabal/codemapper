@@ -1,4 +1,5 @@
 <?php include '../BackendFunctions/db_conn.php';
+session_start();
 include 'header.php';?>
 
 <div class="content">
@@ -13,6 +14,16 @@ include 'header.php';?>
             if(isset($_GET['success'])){
                 echo '<div class="alert alert-success" role="alert">
                 Challenge updated successfully!
+              </div>';
+            }
+            if(isset($_GET['insert_err'])){
+              echo '<div class="alert alert-danger" role="alert">
+              Some Error Occured. Challenge could not be created.
+              </div>';
+            }
+            if(isset($_GET['insert_success'])){
+                echo '<div class="alert alert-success" role="alert">
+                Challenge created successfully!
               </div>';
             }
             if(isset($_GET['delerr'])){

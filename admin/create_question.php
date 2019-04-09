@@ -1,4 +1,5 @@
 <?php include '../BackendFunctions/db_conn.php';
+session_start();
 include 'header.php';?>
 <div class="content">
     <main class="page-content">

@@ -32,9 +32,6 @@ include 'BackendFunctions/db_conn.php';?>
                     ?>
                     <p class="card-text"><b>No of questions: </b> <?php echo $num_questions['count(*)']?></p>
 
-                    <a href="admin/view_challenge.php?challenge_id=<?php echo $row['challenge_id']?>" class="btn btn-info" style="float:left; margin-left:10px;">
-                           View
-                        </a>
                 </div>
             </div>
             </div>
